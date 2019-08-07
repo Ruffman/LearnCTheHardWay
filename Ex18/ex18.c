@@ -99,6 +99,8 @@ int main(int argc, char* argv[])
 	
 	free(numbers);
 	
+	numbers[1] = 1;
+	
 	return 0;
 }
 
