@@ -90,6 +90,63 @@ error:
 	return -1;
 }
 
+int print_out(const char* fmt, ...)
+{
+	int pc = 0;
+	va_list argp;
+	va_start(argp, fmt);
+	int print_int = 0;
+	char print_char = ' ';
+	char* print_string = NULL;
+	// double print_double = 0.0;
+	
+	for (int i = 0; fmt[i] != '\0'; ++i) {
+		if (fmt[i] == '%') {
+			++i;
+			switch (fmt[i]) {
+				case '\0':
+					sentinel("Wrong input format");
+					break;
+				case 'd':
+					print_int = va_arg(argp, int);
+					int length = snprintf(NULL, 0, "%d", print_int);
+					print_string = malloc(length + 1);
+					snprintf(print_string, length + 1, "%d", print_int);
+					pc = fputs(print_string, stdout);
+					check(pc != -1, "Failed to print int");
+					free(print_string);
+					break;
+				case 'c':
+					print_char = va_arg(argp, int);
+					pc = putchar(print_char);
+					check(pc != -1, "Failed to print char");
+					break;
+				case 's':
+					print_string = va_arg(argp, char*);
+					pc = fputs(print_string, stdout);
+					check(pc != -1, "Failed to print string");
+					break;
+				case 'f':
+					log_info("Not yet supported");
+					break;
+				default:
+					sentinel("reached default in switch in print_out");
+			}
+		} else {
+			putchar(fmt[i]);
+		}
+		
+
+	}
+	
+	va_end(argp);
+	
+	return 0;
+error:
+	va_end(argp);
+	return -1;
+}
+
 int main(int argc, char* argp[])
 {
 	char* first_name = NULL;
@@ -113,11 +170,11 @@ int main(int argc, char* argp[])
 	rc = read_scan("%d", &age);
 	check(rc == 0, "Failed age");
 	
-	printf("-----------RESULTS-----------\n");
-	printf("First name: %s", first_name);
-	printf("Initial: %c\n", initial);
-	printf("Last name: %s", last_name);
-	printf("Age: %d\n", age);
+	print_out("-----------RESULTS-----------\n");
+	print_out("First name: %s", first_name);
+	print_out("Initial: %c\n", initial);
+	print_out("Last name: %s", last_name);
+	print_out("Age: %d\n", age);
 	
 	free(first_name);
 	free(last_name);
