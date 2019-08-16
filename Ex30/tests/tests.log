@@ -1,0 +1,73 @@
+DEBUG tests/ex30_tests.c:65: ----- RUNNING: ./tests/ex30_tests
+DEBUG tests/ex30_tests.c:57: 
+----- test_dlopen
+DEBUG tests/ex30_tests.c:58: 
+----- test_functions
+[ERROR] (tests/ex30_tests.c:33:test_functions errno: None) print_a_message failed
+DEBUG tests/ex30_tests.c:65: ----- RUNNING: ./tests/ex30_tests
+DEBUG tests/ex30_tests.c:57: 
+----- test_dlopen
+DEBUG tests/ex30_tests.c:58: 
+----- test_functions
+[ERROR] (tests/ex30_tests.c:34:test_functions errno: None) uppercase failed
+DEBUG tests/ex30_tests.c:65: ----- RUNNING: ./tests/ex30_tests
+DEBUG tests/ex30_tests.c:57: 
+----- test_dlopen
+DEBUG tests/ex30_tests.c:58: 
+----- test_functions
+[ERROR] (tests/ex30_tests.c:33:test_functions errno: None) print_a_message failed
+DEBUG tests/ex30_tests.c:66: ----- RUNNING: ./tests/ex30_tests
+DEBUG tests/ex30_tests.c:58: 
+----- test_dlopen
+DEBUG tests/ex30_tests.c:59: 
+----- test_functions
+[ERROR] (tests/ex30_tests.c:34:test_functions errno: None) print_a_message failed
+DEBUG tests/ex30_tests.c:66: ----- RUNNING: ./tests/ex30_tests
+DEBUG tests/ex30_tests.c:58: 
+----- test_dlopen
+DEBUG tests/ex30_tests.c:59: 
+----- test_functions
+DEBUG tests/ex30_tests.c:60: 
+----- test_failures
+DEBUG tests/ex30_tests.c:61: 
+----- test_dlclose
+DEBUG tests/ex30_tests.c:66: ----- RUNNING: ./tests/ex30_tests
+DEBUG tests/ex30_tests.c:58: 
+----- test_dlopen
+DEBUG tests/ex30_tests.c:59: 
+----- test_functions
+[ERROR] (tests/ex30_tests.c:35:test_functions errno: None) uppercase failed
+DEBUG tests/ex30_tests.c:68: ----- RUNNING: ./tests/ex30_tests
+DEBUG tests/ex30_tests.c:60: 
+----- test_dlopen
+DEBUG tests/ex30_tests.c:61: 
+----- test_functions
+DEBUG tests/ex30_tests.c:62: 
+----- test_failures
+[ERROR] (tests/ex30_tests.c:45:test_failures errno: None) fail_on_purpose should fail
+DEBUG tests/ex30_tests.c:68: ----- RUNNING: ./tests/ex30_tests
+DEBUG tests/ex30_tests.c:60: 
+----- test_dlopen
+DEBUG tests/ex30_tests.c:61: 
+----- test_functions
+DEBUG tests/ex30_tests.c:62: 
+----- test_failures
+[ERROR] (tests/ex30_tests.c:45:test_failures errno: None) fail_on_purpose should fail
+DEBUG tests/ex30_tests.c:68: ----- RUNNING: ./tests/ex30_tests
+DEBUG tests/ex30_tests.c:60: 
+----- test_dlopen
+DEBUG tests/ex30_tests.c:61: 
+----- test_functions
+DEBUG tests/ex30_tests.c:62: 
+----- test_failures
+DEBUG tests/ex30_tests.c:63: 
+----- test_dlclose
+DEBUG tests/ex30_tests.c:68: ----- RUNNING: ./tests/ex30_tests
+DEBUG tests/ex30_tests.c:60: 
+----- test_dlopen
+DEBUG tests/ex30_tests.c:61: 
+----- test_functions
+DEBUG tests/ex30_tests.c:62: 
+----- test_failures
+DEBUG tests/ex30_tests.c:63: 
+----- test_dlclose

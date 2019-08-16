@@ -11,12 +11,6 @@ enum mode {
 	OR
 };
 
-void die(char* text)
-{
-	printf("%s\n", text);
-	exit(1);
-}
-
 int checkLognameForWords(char* curFileName, enum mode MODE, int argc, char* argv[])
 {
 	int wordsInName = 0;
@@ -49,25 +43,19 @@ int main(int argc, char* argv[])
 	for (int i = 1; i < argc; ++i) {
 		if (argv[i][0] == '-') {
 			if (argv[i][1] == 'o') {
-				if (i > 1) {
-					die("Please put -o as the second argument");
-				}
+				check(i > 1, "Please put -o as the second argument");
 				MODE = OR;
 			}
 		}
 	}
 	
-	if (argc < 2) {
-		die("You should enter a word to search for");
-	} else if (MODE == OR && argc < 3) {
-		die("You should enter a word to search for");
-	}
+	check(argc > 1, "You should enter a word to search for");
+	check(argc > 2 && MODE == OR, "You should enter a word to search for");
 	
 	char* logFind = "/home/ruffman/.logfind";
 	FILE* allowed = fopen(logFind, "r");
-	if (!allowed) {
-		die("Couldn't open file specifying allowed lognames");
-	}
+	check(allowed != NULL, "Couldn't open file specifying allowed lognames");
+
 	char* line = malloc(MAX_LINE_SIZE);
 	char* allowedLogs[MAX_NUM_LOGTYPES];
 	
@@ -81,9 +69,7 @@ int main(int argc, char* argv[])
 	char* curFileName = NULL;
 	
 	DIR* curLoggingDir = opendir("/var/log");
-	if (!curLoggingDir) {
-		die("Couldn't open directory of log files");
-	}
+	check(curLoggingDir != NULL, "Couldn't open directory of log files");
 	
 	int matchCount = 0;
 	while ((de = readdir(curLoggingDir)) != NULL) {
@@ -101,6 +87,12 @@ int main(int argc, char* argv[])
 	fclose(allowed);
 	closedir(curLoggingDir);
 	free(line);
+	
+	return 0;
+error:
+	if (allowed) fclose(allowed);
+	if (curLoggingDir) closedir(curLoggingDir);
+	if (line) free(line);
 	
 	return 0;
 }

@@ -2,29 +2,23 @@
 #include <stdlib.h>
 #include <errno.h>
 #include <string.h>
+#include <assert.h>
 
-void die(const char* message)
-{
-	if (errno) {
-		perror(message);
-	} else {
-		printf("ERROR: %s\n", message);
-	}
-	
-	exit(1);
-}
+#include "dbg.h"
+
+
 
 typedef int (*compare_cb)(int a, int b);
 
 int* bubble_sort(int* numbers, int count, compare_cb cmp)
 {
+	assert(numbers != NULL && "Received invalid argument");
+	
 	int temp = 0;
 	int i = 0;
 	int j = 0;
 	int* target = malloc(count * sizeof(int));
-	
-	if (!target)
-		die("Memory error in bubble_sort");
+	check_mem(target);
 	
 	memcpy(target, numbers, count * sizeof(int));
 	
@@ -39,6 +33,9 @@ int* bubble_sort(int* numbers, int count, compare_cb cmp)
 	}
 	
 	return target;
+error:
+	if (target) free(target);
+	return NULL;
 }
 
 int sorted_order(int a, int b)
@@ -60,15 +57,11 @@ int strange_order(int a, int b)
 	}
 }
 
-void break_it(int a, int b)
-{
-}
-
 void test_sorting(int* numbers, int count, compare_cb cmp)
 {
+	assert(numbers != NULL && "Received invalid argument");
 	int* sorted = bubble_sort(numbers, count, cmp);
-	if (!sorted)
-		die("Sorting error in test_sorting");
+	check(sorted != NULL, "Sorting error in test_sorting");
 	
 	for (int i = 0; i < count; ++i) {
 		printf("%d, ", sorted[i]);
@@ -77,17 +70,18 @@ void test_sorting(int* numbers, int count, compare_cb cmp)
 	printf("\n");
 	
 	free(sorted);
+	return;
+error:
+	if (sorted) free(sorted);
 }
 
 int main(int argc, char* argv[])
 {
-	if (argc < 2)
-		die("Usage: ./ex18 2 4 6 1 4 8 3 7");
+	assert(argc >= 2 && "Usage: ./ex18 2 4 6 1 4 8 3 7");
 	
 	int count = argc - 1;
 	int* numbers = malloc(count * sizeof(int));
-	if (!numbers)
-		die("Memory error in main");
+	check_mem(numbers);
 	
 	for (int i = 0; i < count; ++i) {
 		numbers[i] = atoi(argv[i + 1]);
@@ -99,8 +93,9 @@ int main(int argc, char* argv[])
 	
 	free(numbers);
 	
-	numbers[1] = 1;
-	
 	return 0;
+error:
+	if (numbers) free(numbers);
+	return 1;
 }
 
