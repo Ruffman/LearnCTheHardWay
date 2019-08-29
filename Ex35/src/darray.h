@@ -27,7 +27,6 @@ void* DArray_pop(DArray* array);
 #define DArray_end(A) ((A)->end)
 #define DArray_count(A) DArray_end(A)
 #define DArray_max(A) ((A)->max)
-#define DArray_element_size(A) ((A)->element_size)
 
 #define DEFAULT_EXPAND_RATE 300
 
