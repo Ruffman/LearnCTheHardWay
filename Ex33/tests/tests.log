@@ -1,0 +1,8 @@
+DEBUG tests/list_algos_tests.c:86: ----- RUNNING: ./tests/list_algos_tests
+DEBUG tests/list_algos_tests.c:80: 
+----- test_bubble_sort
+Segmentation fault
+DEBUG tests/list_algos_tests.c:86: ----- RUNNING: ./tests/list_algos_tests
+DEBUG tests/list_algos_tests.c:80: 
+----- test_bubble_sort
+Segmentation fault
