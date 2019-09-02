@@ -5815,3 +5815,65 @@ DEBUG tests/darray_tests.c:130:
 ----- test_push_pop
 DEBUG tests/darray_tests.c:131: 
 ----- test_destroy
+DEBUG tests/darray_algos_tests.c:81: ----- RUNNING: ./tests/darray_algos_tests
+DEBUG tests/darray_algos_tests.c:74: 
+----- test_qsort
+DEBUG tests/darray_algos_tests.c:39: ----- Testing quick sort -----
+DEBUG tests/darray_algos_tests.c:75: 
+----- test_msort
+DEBUG tests/darray_algos_tests.c:39: ----- Testing merge sort -----
+[ERROR] (tests/darray_algos_tests.c:42:run_sort_test errno: None) array not sorted
+DEBUG tests/darray_algos_tests.c:76: 
+----- test_hsort
+DEBUG tests/darray_algos_tests.c:39: ----- Testing heap sort -----
+[ERROR] (tests/darray_algos_tests.c:42:run_sort_test errno: None) array not sorted
+DEBUG tests/darray_tests.c:136: ----- RUNNING: ./tests/darray_tests
+DEBUG tests/darray_tests.c:123: 
+----- test_create
+DEBUG tests/darray_tests.c:124: 
+----- test_new
+DEBUG tests/darray_tests.c:125: 
+----- test_set
+DEBUG tests/darray_tests.c:126: 
+----- test_get
+DEBUG tests/darray_tests.c:127: 
+----- test_remove
+DEBUG tests/darray_tests.c:128: 
+----- test_clear
+DEBUG tests/darray_tests.c:129: 
+----- test_expand_contract
+DEBUG tests/darray_tests.c:130: 
+----- test_push_pop
+DEBUG tests/darray_tests.c:131: 
+----- test_destroy
+DEBUG tests/darray_algos_tests.c:81: ----- RUNNING: ./tests/darray_algos_tests
+DEBUG tests/darray_algos_tests.c:74: 
+----- test_qsort
+DEBUG tests/darray_algos_tests.c:39: ----- Testing quick sort -----
+DEBUG tests/darray_algos_tests.c:75: 
+----- test_msort
+DEBUG tests/darray_algos_tests.c:39: ----- Testing merge sort -----
+[ERROR] (tests/darray_algos_tests.c:42:run_sort_test errno: None) array not sorted
+DEBUG tests/darray_algos_tests.c:76: 
+----- test_hsort
+DEBUG tests/darray_algos_tests.c:39: ----- Testing heap sort -----
+[ERROR] (tests/darray_algos_tests.c:42:run_sort_test errno: None) array not sorted
+DEBUG tests/darray_tests.c:136: ----- RUNNING: ./tests/darray_tests
+DEBUG tests/darray_tests.c:123: 
+----- test_create
+DEBUG tests/darray_tests.c:124: 
+----- test_new
+DEBUG tests/darray_tests.c:125: 
+----- test_set
+DEBUG tests/darray_tests.c:126: 
+----- test_get
+DEBUG tests/darray_tests.c:127: 
+----- test_remove
+DEBUG tests/darray_tests.c:128: 
+----- test_clear
+DEBUG tests/darray_tests.c:129: 
+----- test_expand_contract
+DEBUG tests/darray_tests.c:130: 
+----- test_push_pop
+DEBUG tests/darray_tests.c:131: 
+----- test_destroy
