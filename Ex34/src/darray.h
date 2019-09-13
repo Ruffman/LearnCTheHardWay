@@ -1,5 +1,5 @@
-#ifndef _DArray_h
-#define _DArray_h
+#ifndef DArray_h
+#define DArray_h
 #include <stdlib.h>
 #include <assert.h>
 #include "dbg.h"

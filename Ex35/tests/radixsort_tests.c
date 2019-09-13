@@ -4,7 +4,7 @@
 
 static int make_random(RadixMap* map)
 {
-	for (size_t i = 0; i < map->max - 1; ++i) {
+	for (size_t i = 0; i < map->max; ++i) {
 		uint32_t key = (uint32_t) (rand() | (rand() << 16));
 		check(RadixMap_add(map, key, i) == 0, "Failed to add key %u", key);
 	}
@@ -40,7 +40,7 @@ static int test_search(RadixMap* map)
 	RMElement* d = NULL;
 	RMElement* found = NULL;
 	
-	for (i = map->end / 2; i < map->end; ++i) {
+	for (i = 0; i < map->end; ++i) {
 		d = &map->contents[i];
 		found = RadixMap_find(map, d->data.key);
 		check(found != NULL, "Didn't find %u at %u", d->data.key, i);

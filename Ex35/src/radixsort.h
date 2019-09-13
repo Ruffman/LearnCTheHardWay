@@ -1,6 +1,9 @@
 #ifndef radixsort_h
 #define radixsort_h
 
+#include <stddef.h>
+#include <stdint.h>
+
 typedef union RMElement {
 	uint64_t raw;
 	struct {
